@@ -13,13 +13,15 @@ class CMakeBuild(build_ext):
         # Ensure build directory exists
         os.makedirs(build_temp, exist_ok=True)
 
-        # ✅ Fix: Use the correct project root (not `..`)
+        # ✅ Detect project root where CMakeLists.txt is located
         project_root = os.path.abspath(os.path.dirname(__file__))
 
-        # ✅ Fix: Explicitly set C++ standard (Colab sometimes defaults to an older version)
+        # ✅ Set CMake arguments to handle Python paths correctly
         cmake_args = [
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
-            "-DCMAKE_CXX_STANDARD=17"
+            "-DCMAKE_CXX_STANDARD=17",
+            f"-DPython_EXECUTABLE={sys.executable}",
+            "-DCMAKE_CXX_FLAGS=-fPIC"
         ]
 
         # ✅ Run CMake in the correct directory
@@ -36,7 +38,7 @@ setup(
     url="https://github.com/naninvader/BioOPT",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    package_data={"bioopt": ["bioopt_python*.so"]},  # ✅ Ensure shared object files are included
+    package_data={"bioopt": ["bioopt_python*.so"]},  # ✅ Ensures .so file is included
     ext_modules=[Extension("bioopt_python", sources=[])],  # Placeholder for compiled .so file
     cmdclass={"build_ext": CMakeBuild},
     install_requires=["numpy", "torch", "matplotlib"],

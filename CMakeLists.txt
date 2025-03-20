@@ -1,23 +1,28 @@
 cmake_minimum_required(VERSION 3.10)
 project(BioOPT)
 
-set(CMAKE_CXX_STANDARD 17)  
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -frtti")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -D_GLIBCXX_USE_CXX11_ABI=0")
 
-# Set the Python executable from the virtual environment (if needed)
-set(Python_EXECUTABLE /home/harrisonbitonti/bioopt_env/bin/python)
+# ✅ Automatically detect Python executable (important for Colab)
+find_package(Python COMPONENTS Interpreter Development REQUIRED)
+set(Python_EXECUTABLE ${Python_EXECUTABLE})
 
-# Find Pybind11
-find_package(pybind11 REQUIRED)
+# ✅ Set output directory for shared libraries
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-# Build the Python extension module
-pybind11_add_module(bioopt_python
-    src/bindings/bindings.cpp
+# ✅ Include directories
+include_directories(${Python_INCLUDE_DIRS})
+include_directories(include)
+
+# ✅ Define shared library for Python bindings
+add_library(bioopt_python SHARED 
+    src/bindings/bindings.cpp 
+    src/core/optimizer.cpp 
     src/algorithms/sma.cpp
-    src/core/optimizer.cpp
 )
 
-target_include_directories(bioopt_python PRIVATE
-    ${CMAKE_SOURCE_DIR}/include
-    ${pybind11_INCLUDE_DIRS}
-)
+# ✅ Link Python library
+target_include_directories(bioopt_python PRIVATE ${Python_INCLUDE_DIRS})
+target_link_libraries(bioopt_python PRIVATE ${Python_LIBRARIES})
