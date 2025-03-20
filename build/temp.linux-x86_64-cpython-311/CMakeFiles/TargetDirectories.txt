@@ -1,0 +1,3 @@
+/home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles/bioopt_python.dir
+/home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles/edit_cache.dir
+/home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles/rebuild_cache.dir
