@@ -11,19 +11,19 @@ class CMakeBuild(build_ext):
         # Determine the output directory for the compiled extension module
         extdir = os.path.abspath(os.path.dirname(self.get_ext_fullpath(ext.name)))
         build_temp = os.path.abspath(self.build_temp)
-        
-        # Remove old build directory to avoid cached paths causing issues
+
+        # Remove any old build directory to avoid cached paths causing issues
         if os.path.exists(build_temp):
             shutil.rmtree(build_temp)
         os.makedirs(build_temp, exist_ok=True)
-        
+
         # Use the directory containing setup.py as the project root
         project_root = os.path.abspath(os.path.dirname(__file__))
         print("Project root:", project_root)
         print("Build directory:", build_temp)
         print("Extension output directory:", extdir)
-        
-        # Set up CMake arguments. Force C++17 and -fPIC and pass the Python executable.
+
+        # Set up CMake arguments: force C++17, -fPIC, and pass the Python executable
         cmake_args = [
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
             "-DCMAKE_CXX_STANDARD=17",
@@ -31,7 +31,7 @@ class CMakeBuild(build_ext):
             "-DCMAKE_CXX_FLAGS=-fPIC"
         ]
         print("Running CMake with arguments:", cmake_args)
-        
+
         # Run CMake using the project root as the source directory
         subprocess.check_call(["cmake", project_root] + cmake_args, cwd=build_temp)
         subprocess.check_call(["cmake", "--build", ".", "--config", "Release"], cwd=build_temp)
@@ -44,10 +44,10 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/naninvader/BioOPT",
-    # Install the extension as a top-level module named 'bioopt_python'
-    py_modules=["bioopt_python"],
+    # Install the extension as a top-level module named "bioopt_python"
     ext_modules=[Extension("bioopt_python", sources=[])],
     cmdclass={"build_ext": CMakeBuild},
     install_requires=["numpy", "matplotlib"],
     options={"bdist_wheel": {"universal": False}},
+    zip_safe=False,
 )
