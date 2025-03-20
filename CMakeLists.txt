@@ -13,7 +13,8 @@ set(Python_EXECUTABLE ${Python_EXECUTABLE})
 include_directories(/usr/local/lib/python3.11/dist-packages/pybind11/include)
 
 # ✅ Set correct include paths
-include_directories(${Python_INCLUDE_DIRS})
+# ✅ Manually specify Pybind11 include directory
+include_directories(${Python_INCLUDE_DIRS} /usr/local/lib/python3.11/dist-packages/pybind11/include)
 include_directories(${CMAKE_SOURCE_DIR}/include)  # Ensures headers are found
 
 # ✅ Set output directory for shared libraries
