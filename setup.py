@@ -13,10 +13,10 @@ class CMakeBuild(build_ext):
         # Ensure build directory exists
         os.makedirs(build_temp, exist_ok=True)
 
-        # ✅ Detect project root where CMakeLists.txt is located
+        # ✅ Detect the correct project root where CMakeLists.txt is located
         project_root = os.path.abspath(os.path.dirname(__file__))
 
-        # ✅ Set CMake arguments to handle Python paths correctly
+        # ✅ Fix: Force CMake to use the correct directory
         cmake_args = [
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
             "-DCMAKE_CXX_STANDARD=17",
@@ -24,7 +24,7 @@ class CMakeBuild(build_ext):
             "-DCMAKE_CXX_FLAGS=-fPIC"
         ]
 
-        # ✅ Run CMake in the correct directory
+        # ✅ Change directory before running CMake
         subprocess.check_call(["cmake", project_root] + cmake_args, cwd=build_temp)
         subprocess.check_call(["cmake", "--build", ".", "--config", "Release"], cwd=build_temp)
 
@@ -38,13 +38,9 @@ setup(
     url="https://github.com/naninvader/BioOPT",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    package_data={"bioopt": ["bioopt_python*.so"]},  # ✅ Ensure .so is included
-    ext_modules=[Extension("bioopt_python", sources=[])],  # Placeholder for compiled .so file
+    package_data={"bioopt": ["bioopt_python*.so"]},  
+    ext_modules=[Extension("bioopt_python", sources=[])],  
     cmdclass={"build_ext": CMakeBuild},
-    install_requires=[
-        "numpy",
-        "matplotlib",
-        # 🔥 REMOVE "torch" to avoid unnecessary reinstallation!
-    ],
-    options={"bdist_wheel": {"universal": False}},  # ✅ Forces direct install (skip wheels)
+    install_requires=["numpy", "matplotlib"],
+    options={"bdist_wheel": {"universal": False}},  
 )
