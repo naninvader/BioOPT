@@ -8,12 +8,10 @@ import shutil
 class CMakeBuild(build_ext):
     """Custom build_ext command to compile the C++ extension using CMake."""
     def build_extension(self, ext):
-        # Determine the output directory for the compiled extension
         extdir = os.path.abspath(os.path.dirname(self.get_ext_fullpath(ext.name)))
-        # Absolute path for the temporary build directory
         build_temp = os.path.abspath(self.build_temp)
 
-        # Clean up any old build directory to avoid cached paths causing issues
+        # Remove old build directory to avoid cached paths.
         if os.path.exists(build_temp):
             shutil.rmtree(build_temp)
         os.makedirs(build_temp, exist_ok=True)
@@ -21,19 +19,16 @@ class CMakeBuild(build_ext):
         # Use the directory containing setup.py as the project root
         project_root = os.path.abspath(os.path.dirname(__file__))
         print("Project root:", project_root)
-        print("Build temp directory:", build_temp)
+        print("Build directory:", build_temp)
         print("Extension output directory:", extdir)
 
-        # Set up CMake arguments
         cmake_args = [
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}",
             "-DCMAKE_CXX_STANDARD=17",
             f"-DPython_EXECUTABLE={sys.executable}",
             "-DCMAKE_CXX_FLAGS=-fPIC"
         ]
-        print("Running CMake with arguments:", cmake_args)
-
-        # Run CMake using the project root as the source directory
+        print("Running CMake with args:", cmake_args)
         subprocess.check_call(["cmake", project_root] + cmake_args, cwd=build_temp)
         subprocess.check_call(["cmake", "--build", ".", "--config", "Release"], cwd=build_temp)
 
