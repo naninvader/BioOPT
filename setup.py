@@ -38,8 +38,9 @@ setup(
     url="https://github.com/naninvader/BioOPT",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    package_data={"bioopt": ["bioopt_python*.so"]},  # ✅ Ensures .so file is included
+    package_data={"bioopt": ["bioopt_python*.so"]},  # ✅ Ensure .so is included
     ext_modules=[Extension("bioopt_python", sources=[])],  # Placeholder for compiled .so file
     cmdclass={"build_ext": CMakeBuild},
     install_requires=["numpy", "torch", "matplotlib"],
+    options={"bdist_wheel": {"universal": False}},  # ✅ Forces direct installation (skip wheels)
 )
