@@ -26,6 +26,9 @@ add_library(bioopt_python SHARED
     src/algorithms/sma.cpp
 )
 
+# Remove the default "lib" prefix and force output name to "bioopt_python"
+set_target_properties(bioopt_python PROPERTIES PREFIX "" OUTPUT_NAME "bioopt_python")
+
 # Ensure that the Python include directories are used for this library
 target_include_directories(bioopt_python PRIVATE ${Python_INCLUDE_DIRS})
 
