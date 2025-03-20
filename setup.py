@@ -41,6 +41,10 @@ setup(
     package_data={"bioopt": ["bioopt_python*.so"]},  # ✅ Ensure .so is included
     ext_modules=[Extension("bioopt_python", sources=[])],  # Placeholder for compiled .so file
     cmdclass={"build_ext": CMakeBuild},
-    install_requires=["numpy", "torch", "matplotlib"],
-    options={"bdist_wheel": {"universal": False}},  # ✅ Forces direct installation (skip wheels)
+    install_requires=[
+        "numpy",
+        "matplotlib",
+        # 🔥 REMOVE "torch" to avoid unnecessary reinstallation!
+    ],
+    options={"bdist_wheel": {"universal": False}},  # ✅ Forces direct install (skip wheels)
 )
