@@ -1,0 +1,3 @@
+/home/harrisonbitonti/projects/bioopt/build/CMakeFiles/bioopt.dir
+/home/harrisonbitonti/projects/bioopt/build/CMakeFiles/edit_cache.dir
+/home/harrisonbitonti/projects/bioopt/build/CMakeFiles/rebuild_cache.dir

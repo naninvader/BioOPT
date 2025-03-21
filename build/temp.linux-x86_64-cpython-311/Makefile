@@ -117,24 +117,72 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named bioopt_python
+# Target rules for targets named bioopt
 
 # Build rule for target.
-bioopt_python: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bioopt_python
-.PHONY : bioopt_python
+bioopt: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bioopt
+.PHONY : bioopt
 
 # fast build rule for target.
-bioopt_python/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/build
-.PHONY : bioopt_python/fast
+bioopt/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/build
+.PHONY : bioopt/fast
+
+src/algorithms/ga.o: src/algorithms/ga.cpp.o
+.PHONY : src/algorithms/ga.o
+
+# target to build an object file
+src/algorithms/ga.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/ga.cpp.o
+.PHONY : src/algorithms/ga.cpp.o
+
+src/algorithms/ga.i: src/algorithms/ga.cpp.i
+.PHONY : src/algorithms/ga.i
+
+# target to preprocess a source file
+src/algorithms/ga.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/ga.cpp.i
+.PHONY : src/algorithms/ga.cpp.i
+
+src/algorithms/ga.s: src/algorithms/ga.cpp.s
+.PHONY : src/algorithms/ga.s
+
+# target to generate assembly for a file
+src/algorithms/ga.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/ga.cpp.s
+.PHONY : src/algorithms/ga.cpp.s
+
+src/algorithms/pso.o: src/algorithms/pso.cpp.o
+.PHONY : src/algorithms/pso.o
+
+# target to build an object file
+src/algorithms/pso.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/pso.cpp.o
+.PHONY : src/algorithms/pso.cpp.o
+
+src/algorithms/pso.i: src/algorithms/pso.cpp.i
+.PHONY : src/algorithms/pso.i
+
+# target to preprocess a source file
+src/algorithms/pso.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/pso.cpp.i
+.PHONY : src/algorithms/pso.cpp.i
+
+src/algorithms/pso.s: src/algorithms/pso.cpp.s
+.PHONY : src/algorithms/pso.s
+
+# target to generate assembly for a file
+src/algorithms/pso.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/pso.cpp.s
+.PHONY : src/algorithms/pso.cpp.s
 
 src/algorithms/sma.o: src/algorithms/sma.cpp.o
 .PHONY : src/algorithms/sma.o
 
 # target to build an object file
 src/algorithms/sma.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/algorithms/sma.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/sma.cpp.o
 .PHONY : src/algorithms/sma.cpp.o
 
 src/algorithms/sma.i: src/algorithms/sma.cpp.i
@@ -142,7 +190,7 @@ src/algorithms/sma.i: src/algorithms/sma.cpp.i
 
 # target to preprocess a source file
 src/algorithms/sma.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/algorithms/sma.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/sma.cpp.i
 .PHONY : src/algorithms/sma.cpp.i
 
 src/algorithms/sma.s: src/algorithms/sma.cpp.s
@@ -150,7 +198,7 @@ src/algorithms/sma.s: src/algorithms/sma.cpp.s
 
 # target to generate assembly for a file
 src/algorithms/sma.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/algorithms/sma.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/algorithms/sma.cpp.s
 .PHONY : src/algorithms/sma.cpp.s
 
 src/bindings/bindings.o: src/bindings/bindings.cpp.o
@@ -158,7 +206,7 @@ src/bindings/bindings.o: src/bindings/bindings.cpp.o
 
 # target to build an object file
 src/bindings/bindings.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/bindings/bindings.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/bindings/bindings.cpp.o
 .PHONY : src/bindings/bindings.cpp.o
 
 src/bindings/bindings.i: src/bindings/bindings.cpp.i
@@ -166,7 +214,7 @@ src/bindings/bindings.i: src/bindings/bindings.cpp.i
 
 # target to preprocess a source file
 src/bindings/bindings.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/bindings/bindings.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/bindings/bindings.cpp.i
 .PHONY : src/bindings/bindings.cpp.i
 
 src/bindings/bindings.s: src/bindings/bindings.cpp.s
@@ -174,7 +222,7 @@ src/bindings/bindings.s: src/bindings/bindings.cpp.s
 
 # target to generate assembly for a file
 src/bindings/bindings.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/bindings/bindings.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/bindings/bindings.cpp.s
 .PHONY : src/bindings/bindings.cpp.s
 
 src/core/optimizer.o: src/core/optimizer.cpp.o
@@ -182,7 +230,7 @@ src/core/optimizer.o: src/core/optimizer.cpp.o
 
 # target to build an object file
 src/core/optimizer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/core/optimizer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/core/optimizer.cpp.o
 .PHONY : src/core/optimizer.cpp.o
 
 src/core/optimizer.i: src/core/optimizer.cpp.i
@@ -190,7 +238,7 @@ src/core/optimizer.i: src/core/optimizer.cpp.i
 
 # target to preprocess a source file
 src/core/optimizer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/core/optimizer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/core/optimizer.cpp.i
 .PHONY : src/core/optimizer.cpp.i
 
 src/core/optimizer.s: src/core/optimizer.cpp.s
@@ -198,7 +246,7 @@ src/core/optimizer.s: src/core/optimizer.cpp.s
 
 # target to generate assembly for a file
 src/core/optimizer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/src/core/optimizer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/src/core/optimizer.cpp.s
 .PHONY : src/core/optimizer.cpp.s
 
 # Help Target
@@ -209,7 +257,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... bioopt_python"
+	@echo "... bioopt"
+	@echo "... src/algorithms/ga.o"
+	@echo "... src/algorithms/ga.i"
+	@echo "... src/algorithms/ga.s"
+	@echo "... src/algorithms/pso.o"
+	@echo "... src/algorithms/pso.i"
+	@echo "... src/algorithms/pso.s"
 	@echo "... src/algorithms/sma.o"
 	@echo "... src/algorithms/sma.i"
 	@echo "... src/algorithms/sma.s"

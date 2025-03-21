@@ -1,0 +1,8 @@
+README.md
+setup.py
+bioopt.egg-info/PKG-INFO
+bioopt.egg-info/SOURCES.txt
+bioopt.egg-info/dependency_links.txt
+bioopt.egg-info/not-zip-safe
+bioopt.egg-info/requires.txt
+bioopt.egg-info/top_level.txt

@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/harrisonbitonti/projects/bioopt/build",
+  "command": "/usr/bin/g++ -Dbioopt_EXPORTS -I/home/harrisonbitonti/projects/bioopt/include -I/usr/include/python3.11  -Wall -g -fPIC -std=gnu++17 -o CMakeFiles/bioopt.dir/src/bindings/bindings.cpp.o -c /home/harrisonbitonti/projects/bioopt/src/bindings/bindings.cpp",
+  "file": "/home/harrisonbitonti/projects/bioopt/src/bindings/bindings.cpp"
+},
+{
+  "directory": "/home/harrisonbitonti/projects/bioopt/build",
+  "command": "/usr/bin/g++ -Dbioopt_EXPORTS -I/home/harrisonbitonti/projects/bioopt/include -I/usr/include/python3.11  -Wall -g -fPIC -std=gnu++17 -o CMakeFiles/bioopt.dir/src/core/optimizer.cpp.o -c /home/harrisonbitonti/projects/bioopt/src/core/optimizer.cpp",
+  "file": "/home/harrisonbitonti/projects/bioopt/src/core/optimizer.cpp"
+},
+{
+  "directory": "/home/harrisonbitonti/projects/bioopt/build",
+  "command": "/usr/bin/g++ -Dbioopt_EXPORTS -I/home/harrisonbitonti/projects/bioopt/include -I/usr/include/python3.11  -Wall -g -fPIC -std=gnu++17 -o CMakeFiles/bioopt.dir/src/algorithms/sma.cpp.o -c /home/harrisonbitonti/projects/bioopt/src/algorithms/sma.cpp",
+  "file": "/home/harrisonbitonti/projects/bioopt/src/algorithms/sma.cpp"
+},
+{
+  "directory": "/home/harrisonbitonti/projects/bioopt/build",
+  "command": "/usr/bin/g++ -Dbioopt_EXPORTS -I/home/harrisonbitonti/projects/bioopt/include -I/usr/include/python3.11  -Wall -g -fPIC -std=gnu++17 -o CMakeFiles/bioopt.dir/src/algorithms/pso.cpp.o -c /home/harrisonbitonti/projects/bioopt/src/algorithms/pso.cpp",
+  "file": "/home/harrisonbitonti/projects/bioopt/src/algorithms/pso.cpp"
+},
+{
+  "directory": "/home/harrisonbitonti/projects/bioopt/build",
+  "command": "/usr/bin/g++ -Dbioopt_EXPORTS -I/home/harrisonbitonti/projects/bioopt/include -I/usr/include/python3.11  -Wall -g -fPIC -std=gnu++17 -o CMakeFiles/bioopt.dir/src/algorithms/ga.cpp.o -c /home/harrisonbitonti/projects/bioopt/src/algorithms/ga.cpp",
+  "file": "/home/harrisonbitonti/projects/bioopt/src/algorithms/ga.cpp"
+}
+]

@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC  -frtti -flto -shared  -o /home/harrisonbitonti/projects/bioopt/build/lib.linux-x86_64-cpython-311/bioopt_python.cpython-311-x86_64-linux-gnu.so CMakeFiles/bioopt_python.dir/src/bindings/bindings.cpp.o CMakeFiles/bioopt_python.dir/src/algorithms/sma.cpp.o CMakeFiles/bioopt_python.dir/src/core/optimizer.cpp.o 

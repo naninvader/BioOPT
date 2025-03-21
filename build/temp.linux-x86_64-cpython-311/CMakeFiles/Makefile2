@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/bioopt_python.dir/all
+all: CMakeFiles/bioopt.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/bioopt_python.dir/clean
+clean: CMakeFiles/bioopt.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/bioopt_python.dir
+# Target rules for target CMakeFiles/bioopt.dir
 
 # All Build rule for target.
-CMakeFiles/bioopt_python.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles --progress-num=1,2,3,4 "Built target bioopt_python"
-.PHONY : CMakeFiles/bioopt_python.dir/all
+CMakeFiles/bioopt.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target bioopt"
+.PHONY : CMakeFiles/bioopt.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/bioopt_python.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bioopt_python.dir/all
+CMakeFiles/bioopt.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bioopt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrisonbitonti/projects/bioopt/build/temp.linux-x86_64-cpython-311/CMakeFiles 0
-.PHONY : CMakeFiles/bioopt_python.dir/rule
+.PHONY : CMakeFiles/bioopt.dir/rule
 
 # Convenience name for target.
-bioopt_python: CMakeFiles/bioopt_python.dir/rule
-.PHONY : bioopt_python
+bioopt: CMakeFiles/bioopt.dir/rule
+.PHONY : bioopt
 
 # clean rule for target.
-CMakeFiles/bioopt_python.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt_python.dir/build.make CMakeFiles/bioopt_python.dir/clean
-.PHONY : CMakeFiles/bioopt_python.dir/clean
+CMakeFiles/bioopt.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bioopt.dir/build.make CMakeFiles/bioopt.dir/clean
+.PHONY : CMakeFiles/bioopt.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
